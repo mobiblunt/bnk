@@ -69,7 +69,7 @@
             -->
 
             <div class="logo">
-                <img class="img-responsive" width="200" height="200" src="{{ url('/') }}/images/clear.png" alt="">
+                <img class="img-responsive" width="200" height="200" src="{{ url('/') }}/images/cler.png" alt="">
                 <a href="/" >
                     
                 </a>
@@ -236,7 +236,7 @@
                 <div class="container">
                     
                     <p class="copyright">
-                        &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Clear Bank. All Rights Reserved</a>
+                        &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Citi Crest Bank. All Rights Reserved</a>
                     </p>
                 </div>
             </footer>

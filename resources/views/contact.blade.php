@@ -8,7 +8,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Clear Bank </title>
+    <title> Citi Crest Bank </title>
     <!-- /Required meta tags -->
 
     <!-- Favicon -->
@@ -178,7 +178,7 @@
                             <i class="ri-map-2-line"></i>
                         </div>
                         <h3>Our Address</h3>
-                        <p>ClearBank, 4th Floor, Prologue Works, 25 Marsh St, Bristol BS1 4AX</p>
+                        <p>Citi Crest Bank, 4th Floor, Prologue Works, 25 Marsh St, Bristol BS1 4AX</p>
                     </div>
                 </div>
                 <!-- /col -->
@@ -193,7 +193,7 @@
                         </div>
                         <h3>Contact</h3>
                         <p>Mobile: <a href="tel:+44457895789">(+44) - 45789 - 5789</a></p>
-                        <p>E-mail: <a href="mailto:hello@aloa.com">hello@clearbankonline.com</a></p>
+                        <p>E-mail: <a href="mailto:hello@aloa.com">hello@citicrestbk.com</a></p>
                     </div>
                 </div>
                 <!-- /col -->
@@ -237,7 +237,7 @@
                 <!-- col -->
                 <div class="col-lg-6 col-md-12 col-sm-12 form-column">
                     <div class="form-inner">
-                        <h3>Let’s have a Conversation<br />with Clear Bank</h3>
+                        <h3>Let’s have a Conversation<br />with Citi Crest Bank</h3>
                         <form method="post" action="#" id="contact-form" class="default-form">
                             <div class="row clearfix">
                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group contact-icon contacts-name">
@@ -285,7 +285,7 @@
                             <div class="section-heading">
                                 <h5 class="section__meta text-white">#get in touch</h5>
                                 <h2 class="section__title">Ready to get started ?</h2>
-                                <p class="section__sub">Speak to a Clear Bank specialist at (800-123-1234)</p>
+                                <p class="section__sub">Speak to a Citi Crest Bank specialist at (800-123-1234)</p>
                             </div>
                         </div>
                         <!-- /col -->
@@ -317,7 +317,7 @@
                 <!-- col -->
                 <div class="col-xl-3 col-lg-3 col-md-4">
                     <div class="footer-logo">
-                        <a href="#"><img src="images/clear.png" alt=""></a>
+                        <a href="#"><img src="images/cler.png" alt=""></a>
                     </div>  
                 </div>
                 <!-- /col -->
@@ -335,7 +335,7 @@
                         <div class="footer-wrapper mb-30">
                             <h3 class="footer-title">Address</h3>
                             <div class="footer-text">
-                                <p>ClearBank, 4th Floor, Prologue Works, 25 Marsh St, Bristol BS1 4AX </p>
+                                <p>Citi Crest Bank, 4th Floor, Prologue Works, 25 Marsh St, Bristol BS1 4AX </p>
                             </div>
                             <div class="footer-icon">
                                 <a href="#"><i class="uil uil-facebook-f"></i></a>
@@ -352,11 +352,11 @@
                             <h3 class="footer-title">Company</h3>
                             <div class="footer-link">
                                 <ul>
-                                    <li><a href="https://www.clear.bank/newsroom">News Room</a></li>
-                                    <li><a href="https://www.clear.bank/report-and-accounts">Reports and Accounts</a></li>
-                                    <li><a href="https://www.clear.bank/how-to-make-a-complaint">Compliants</a></li>
-                                    <li><a href="https://www.clear.bank/regulatory-reporting">Regulatory Reporting</a></li>
-                                    <li><a href="https://www.clear.bank/pillar-3-disclosure">Pillar 3</a></li>
+                                    <li><a href="#">News Room</a></li>
+                                    <li><a href="#">Reports and Accounts</a></li>
+                                    <li><a href="#">Compliants</a></li>
+                                    <li><a href="#">Regulatory Reporting</a></li>
+                                    <li><a href="#">Pillar 3</a></li>
                                 </ul>
                             </div>
                             <div></div>
@@ -369,8 +369,8 @@
                             <h3 class="footer-title">Legal</h3>
                             <div class="footer-link">
                                 <ul>
-                                    <li><a href="https://www.clear.bank/legal">All Documents</a></li>
-                                    <li><a href="https://www.clear.bank/privacy-notices">Privacy Notice</a></li>
+                                    <li><a href="#">All Documents</a></li>
+                                    <li><a href="#">Privacy Notice</a></li>
                                     
                                 </ul>
                             </div>
@@ -403,7 +403,7 @@
                     <!-- col -->
                     <div class="col-xl-6 col-lg-6 col-md-6">
                         <div class="copyright">
-                            <p>© Copyrights 2022 <a href="#">Clear Bank.</a> All rights reserved.</p>
+                            <p>© Copyrights 2022 <a href="#">Citi Crest Bank.</a> All rights reserved.</p>
                         </div>
                     </div>
                     <!-- col -->

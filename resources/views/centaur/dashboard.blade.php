@@ -20,17 +20,7 @@
                                             <th>Date</th>
                                         </thead>
                                         <tbody>
-                                            @foreach($alert as $alt)
-                                            <tr>
-                                                <td>{{$alt->deposit->trans_id}}</td>
-                                                <td>{{$alt->amount}} </td>
-                                                <td>{{$alt->date_paid}}</td>
-                                                
-                                                
-                                                
-                                               
-                                            </tr>
-                                            @endforeach
+                                            
                                             
                                             
                                         </tbody>

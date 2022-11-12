@@ -5,7 +5,7 @@
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-        <title>Clear Bank</title>
+        <title>Citi Crest Bank</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -79,7 +79,7 @@
                 <div class="grid grid--container">
                     <div class="authorization authorization--login">
                         <a class="site-logo" href="/">
-                            <img class="img-responsive" width="300" height="300"  src="images/clear.png" alt="">
+                            <img class="img-responsive" width="300" height="300"  src="images/cler.png" alt="">
                         </a>
 
                         <form class="authorization__form" accept-charset="UTF-8" role="form" method="post" action="{{ route('auth.login.attempt') }}">

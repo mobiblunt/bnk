@@ -4,15 +4,16 @@
 
 @section('content')
     
-        <!-- <div class='btn-toolbar pull-right'>
+        <div class='btn-toolbar pull-right'>
             <a class="btn btn-primary btn-lg" href="{{ route('user.create') }}">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 Create User
             </a>
-        </div> -->
+        </div> 
         <h1>Users</h1>
     
     <div class="row">
+
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             @foreach ($users as $user)
                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">

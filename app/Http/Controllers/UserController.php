@@ -357,7 +357,9 @@ class UserController extends Controller
             }
             session()->flash('error', $message);
             return redirect()->route('users.index');
-        }
+        } 
+
+        dd($user);
 
 
         // Remove the user
