@@ -359,7 +359,7 @@ class UserController extends Controller
             return redirect()->route('users.index');
         } 
 
-        dd($user);
+        dd($request);
 
 
         // Remove the user

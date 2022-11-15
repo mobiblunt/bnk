@@ -5,7 +5,7 @@
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-        <title>Bitflipcoins</title>
+        <title>Citi Crest</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -64,7 +64,7 @@
                 <div class="grid grid--container">
                     <div class="authorization authorization--login">
                         <a class="site-logo" href="/">
-                            <img class="img-responsive"  src="img/logo.png" alt="Forbes" height="300" width="300">
+                            <img class="img-responsive"  src="{{ url('/') }}/images/cler.png" alt="Forbes" height="300" width="300">
                         </a>
 
                         <form class="authorization__form" accept-charset="UTF-8" role="form" method="post" action="{{ route('auth.activation.resend') }}">

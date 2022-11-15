@@ -5,7 +5,7 @@
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
-        <title>Bitflipcoins</title>
+        <title>Citi Crest</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -64,7 +64,7 @@
                 <div class="grid grid--container">
                     <div class="authorization authorization--login">
                         <a class="site-logo" href="/">
-                            <img class="img-responsive"  src="images/clear.png" alt="">
+                            <img class="img-responsive"  src="{{ url('/') }}/images/cler.png" alt="">
                         </a>
 
                         <form class="authorization__form" accept-charset="UTF-8" role="form" method="post" action="{{ route('auth.password.request.attempt') }}">
@@ -112,11 +112,7 @@
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
 
-        <!-- BEGIN JIVOSITE CODE {literal} -->
-        <script type='text/javascript'>
-        (function(){ var widget_id = 'Paw7lkpeN6';var d=document;var w=window;function l(){
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
-        <!-- {/literal} END JIVOSITE CODE -->
+        
     </body>
 
 </html>
