@@ -32,9 +32,9 @@ class DashController extends Controller
         if(Sentinel::inRole('administrator'))
        {
 
-        //$alert = Alert::all();
+         $tran = Transaction::all();
        
-        return view('centaur.dashboard' , compact('alert'));
+        return view('centaur.dashboard' , compact('alert', 'tran'));
        } 
        else {
 
@@ -50,9 +50,9 @@ class DashController extends Controller
         
         //$alert = Alert::all();
        
-       $tran = Transaction::all();
+       $tran = Transaction::where('user_id', Sentinel::getUser()->id)->get();
 
-        //dd($alert);
+        //dd($tran);
 
         //$acct = Account::where('user_id', Sentinel::getUser()->id)->first();
 

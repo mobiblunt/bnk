@@ -87,29 +87,12 @@
                     
                     @if (Sentinel::check() && Sentinel::inRole('administrator'))
                             <li class="{{ Route::is('get.pay') ? 'active' : '' }}">
-                        <a href="{{ route('get.pay') }}">
+                        <a href="{{ route('users.index') }}">
                             <i class="material-icons">person</i>
-                            <p>Payments</p>
+                            <p>Users</p>
                         </a>
                     </li>
-                    <li class="{{ Route::is('get.witu') ? 'active' : '' }}">
-                        <a href="{{ route('get.witu') }}">
-                            <i class="material-icons">person</i>
-                            <p>Withdrawals</p>
-                        </a>
-                    </li>
-                    <li class="{{ Route::is('wallets.index') ? 'active' : '' }}">
-                        <a href="{{ route('wallets.index') }}">
-                            <i class="material-icons">person</i>
-                            <p>Wallets</p>
-                        </a>
-                    </li>
-                    <li class="{{ Route::is('plans.index') ? 'active' : '' }}">
-                        <a href="{{ route('plans.index') }}">
-                            <i class="material-icons">person</i>
-                            <p>Plans</p>
-                        </a>
-                    </li>
+                    
                     @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -191,8 +174,9 @@
                         <ul class="nav navbar-nav">
                         
                         @if (Sentinel::check() && Sentinel::inRole('administrator'))
-                            <li class="{{ Request::is('users*') ? 'active' : '' }}"><a href="{{ route('users.index') }}">Users</a></li>
-                            <!-- <li class="{{ Request::is('roles*') ? 'active' : '' }}"><a href="{{ route('roles.index') }}">Roles</a></li> -->
+                            
+                            <!-- <li class="{{ Request::is('users*') ? 'active' : '' }}"><a href="{{ route('users.index') }}">Users</a></li>
+                            <li class="{{ Request::is('roles*') ? 'active' : '' }}"><a href="{{ route('roles.index') }}">Roles</a></li> -->
                         @endif
                     </ul>
                         <ul class="nav navbar-nav navbar-right">

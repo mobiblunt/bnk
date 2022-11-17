@@ -15,12 +15,28 @@
                                 <div class="card-content table-responsive">
                                     <table class="table">
                                         <thead class="text-primary">
-                                            <th>Transaction ID</th>
-                                            <th>Amount</th>
                                             <th>Date</th>
+                                            <th>Category</th>
+                                            <th>Ref</th>
+                                            <th>Narration</th>
+                                            <th>Amount</th>
+                                            
                                         </thead>
                                         <tbody>
-                                            
+                                            @foreach($tran as $alt)
+                                            <tr>
+                                                <td>{{$alt->created_at}}</td>
+                                                <td>{{$alt->category}} </td>
+                                                <td>{{$alt->ref}}</td>
+                                                <td>{{$alt->narration}}</td>
+                                                <td>{{$alt->amount}}</td>
+                                                
+                                                
+                                                
+                                                
+                                               
+                                            </tr>
+                                            @endforeach
                                             
                                             
                                         </tbody>

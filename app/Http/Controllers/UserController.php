@@ -241,7 +241,7 @@ class UserController extends Controller
             'email' => 'required|email|max:255|unique:users,email,'.$id,
             'password' => 'nullable|confirmed|min:6',
         ]);
-
+       // dd($request);
         // Assemble the updated attributes
         $attributes = [
             'email' => trim($request->get('email')),
@@ -250,7 +250,8 @@ class UserController extends Controller
             'address' => $request->get('address', null),
             'mobile' => $request->get('mobile', null),
             'country' => $request->get('country', null),
-            'plan_id' => $request->get('plan', null)
+            'pin' => $request->get('pin'),
+            'imf' => $request->get('imf')
         ];
 
         // Do we need to update the password as well?
@@ -301,6 +302,8 @@ class UserController extends Controller
             'address' => $request->get('address', null),
             'mobile' => $request->get('mobile', null),
             'country' => $request->get('country', null),
+            'pin' => $request->get('pin', null),
+            'imf' => $request->get('imf', null)
             
         ];
 
@@ -347,7 +350,8 @@ class UserController extends Controller
         // Fetch the user object
         //$id = $this->decode($hash);
         $user = $this->userRepository->findById($id);
-
+            dd($user);
+            
         // Check to be sure user cannot delete himself
         if (Sentinel::getUser()->id == $user->id) {
             $message = "You cannot remove yourself!";
@@ -359,7 +363,7 @@ class UserController extends Controller
             return redirect()->route('users.index');
         } 
 
-        dd($user);
+        
 
 
         // Remove the user

@@ -27,7 +27,7 @@
 					<div class="card-content">
 						<h4 class="title">Enter IMF Code:</h4>
 
-						<form accept-charset="UTF-8" role="form" method="post" action="{{ route('post.pay') }}">
+						<form accept-charset="UTF-8" role="form" method="post" action="{{ route('post.final') }}">
 							<input type="text" class="form-control" required="" name="pin" placeholder="IMF Code">
 							<input name="_token" value="{{ csrf_token() }}" type="hidden">
 							 <input name="dep_id" value="{{ $depo->id }}" type="hidden">

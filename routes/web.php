@@ -95,6 +95,8 @@ Route::delete('del-plan/{plan}', ['as' => 'del.plan','uses' => 'PlanController@d
 
 
 Route::post('postpay', 'DepositController@storet')->name('post.pay');
+Route::post('postfinal', 'DepositController@postfi')->name('post.final');
+Route::get('payfinal', 'DepositController@finals')->name('final.pay');
 
 Route::post('postint', 'DepositController@storetin')->name('post.int');
 

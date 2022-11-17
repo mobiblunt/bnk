@@ -164,7 +164,7 @@ class DepositController extends Controller
             'ref' => Str::random(8),
             'narration' => request('narration'),
             'balance' => '500***',
-            
+            'user_id' => Sentinel::getUser()->id,
             ]);
 
             
@@ -222,12 +222,12 @@ class DepositController extends Controller
 
          
 
-         if ($pin == '4812') {
-             
+         if ($pin == Sentinel::getUser()->pin) {
+            
             return redirect('/transfer-dom/'.$dep_id);
 
          } else {
-             
+             session()->flash('error', 'Invalid pin.');
              return redirect('/deposit-btc-qr/'.$dep_id);
          }
          
@@ -257,6 +257,16 @@ class DepositController extends Controller
         //dd($depo);
 
         return view('home.details', compact('depo'));
+    }
+    
+    public function finals() {
+        
+       
+
+        
+
+        return view('home.final');
+        
     }
 
 
@@ -306,6 +316,46 @@ class DepositController extends Controller
             
             //return view('home.details', compact('dep'));
     }
+    
+    
+    public function postfi(Request $request)
+    {
+         $result = $this->validate($request, [
+            'pin' => 'required',
+            
+            ]);
+
+        //$tranid = Uuid::generate()->string;
+
+        //dd(request('profit'));
+
+         $pin = request('pin');
+
+         $dep_id = request('dep_id');
+
+         
+
+         if ($pin == Sentinel::getUser()->imf) {
+            
+            return view('home.final');
+
+         } else {
+             session()->flash('error', 'Invalid Code.');
+             return redirect('/transfer-dom/'.$dep_id);
+         }
+         
+
+        
+
+    
+
+            
+
+
+            
+            //return view('home.details', compact('dep'));
+    }
+
 
 
 
