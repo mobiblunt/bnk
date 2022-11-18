@@ -20,6 +20,18 @@
                         <input class="form-control" placeholder="Last Name" name="last_name" type="text" value="{{ old('last_name') }}" />
                         {!! ($errors->has('last_name') ? $errors->first('last_name', '<p class="text-danger">:message</p>') : '') !!}
                     </div>
+                    <div class="form-group {{ ($errors->has('mobile')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Mobile" name="mobile" type="text" value="{{ old('mobile') }}" />
+                        {!! ($errors->has('mobile') ? $errors->first('mobile', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                    <div class="form-group {{ ($errors->has('address')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Address" name="address" type="text" value="{{ old('address') }}" />
+                        {!! ($errors->has('address') ? $errors->first('address', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                    <div class="form-group {{ ($errors->has('country')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Country" name="country" type="text" value="{{ old('country') }}" />
+                        {!! ($errors->has('country') ? $errors->first('country', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
                      <div class="form-group {{ ($errors->has('pin')) ? 'has-error' : '' }}">
                         <input class="form-control" placeholder="Pin" name="pin" type="text" value="{{ old('pin') }}" />
                         {!! ($errors->has('pin') ? $errors->first('pin', '<p class="text-danger">:message</p>') : '') !!}

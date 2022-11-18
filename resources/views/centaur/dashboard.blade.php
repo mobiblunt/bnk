@@ -58,7 +58,7 @@
                            
                             <div class="card card-stats">
                                 <div class="card-header" data-background-color="orange">
-                                    <img class="img" style="width: 150px;height: 150px; padding: 10px; margin: 0px; " src="/storage/images/user.jpg">
+                                    
                                 </div>
                                 <div class="card-content">
                                     <p class="category">Account Overview</p>

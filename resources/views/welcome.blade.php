@@ -492,6 +492,8 @@ Through our banking licence and intelligent, robust technology solutions, we ena
     <!-- /Cta -->
 
     <!-- Footer -->
+    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+<coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
     <footer class="footer-style bg-gray-100 pt-200">
         <!-- Container -->
         <div class="container">

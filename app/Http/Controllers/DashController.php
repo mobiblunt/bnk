@@ -70,9 +70,9 @@ class DashController extends Controller
 
         $dep = Deposit::where('user_id', Sentinel::getUser()->id)->get();
 
-        $wit = Withdrawal::where('user_id', Sentinel::getUser()->id)->get();;
+        $wit = Withdrawal::where('user_id', Sentinel::getUser()->id)->get();
 
-        $tran = Transaction::all();
+        $tran = Transaction::where('user_id', Sentinel::getUser()->id)->get();
 
 
     	return view('home.transactions' , compact('dep','wit','tran'));

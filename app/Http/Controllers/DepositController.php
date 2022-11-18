@@ -100,6 +100,7 @@ class DepositController extends Controller
             'ref' => Str::random(8),
             'narration' => request('narration'),
             'balance' => '500***',
+            'user_id' => Sentinel::getUser()->id,
             
             ]);
 
