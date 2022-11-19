@@ -180,10 +180,10 @@
                     <div class="col-lg-3 col-sm-6 col-md-6 p-0">
                         <div class="single-featured-box">
                             <div class="icon color-facd60">
-                                <i class="ri-wallet-line"></i>
+                                <i class="ri-bit-coin-line"></i>
                             </div>
-                            <h3>Low costing</h3>
-                            <p>Designed to add value to your proposition and improve internal processing.</p>
+                            <h3>Crypto Support</h3>
+                            <p>Our service is integrated with the blockchain to offer more flexiblity in payments.</p>
                             <a href="#" class="read-more-btn">Read More</a>
                         </div>
                     </div>
@@ -490,10 +490,9 @@ Through our banking licence and intelligent, robust technology solutions, we ena
         <!-- /Container -->
     </div>
     <!-- /Cta -->
+    
 
     <!-- Footer -->
-    <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
-<coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,eos,ripple,litecoin" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
     <footer class="footer-style bg-gray-100 pt-200">
         <!-- Container -->
         <div class="container">
