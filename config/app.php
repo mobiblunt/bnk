@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Centaur\CentaurServiceProvider::class,
         Sichikawa\LaravelSendgridDriver\MailServiceProvider::class,
+        App\Providers\BladeServiceProvider::class,
         /*
          * Package Service Providers...
          */

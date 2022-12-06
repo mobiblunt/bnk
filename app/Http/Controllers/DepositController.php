@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
+use Cartalyst\Sentinel\Users\IlluminateUserRepository;
+use Centaur\AuthManager;
 use CoinPayment;
 use Uuid;
 use App\Deposit; 
@@ -23,6 +25,25 @@ class DepositController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     protected $userRepository;
+     
+     protected $authManager;
+
+    public function __construct(AuthManager $authManager)
+    {
+        // Middleware
+        $this->middleware('sentinel.auth');
+        $this->middleware('sentinel.access:users.create', ['only' => ['create', 'store']]);
+        $this->middleware('sentinel.access:users.view', ['only' => ['index', 'show']]);
+        $this->middleware('sentinel.access:users.update', ['only' => ['edit', 'update']]);
+        $this->middleware('sentinel.access:users.destroy', ['only' => ['destroy']]);
+
+        // Dependency Injection
+        $this->userRepository = app()->make('sentinel.users');
+        $this->authManager = $authManager;
+    }
+
+     
     public function index()
     {
         //
@@ -324,25 +345,46 @@ class DepositController extends Controller
          $result = $this->validate($request, [
             'pin' => 'required',
             
+            
             ]);
 
         //$tranid = Uuid::generate()->string;
 
         //dd(request('profit'));
+        ;
 
          $pin = request('pin');
-
-         $dep_id = request('dep_id');
-
+         
          
 
+         $dep_id = request('dep_id');
+         $depo = Transfer::where('id', $dep_id)->firstOrFail();
+         $deposit = Transaction::find($depo->transaction_id);
+         
+         $use = Sentinel::getUser()->id;
+         
+        // dd($use);
+
+         $user = $this->userRepository->findById($use);
+         
+         $attributes = [
+            'balance' => Sentinel::getUser()->balance - $depo->amount
+        ];
+
          if ($pin == Sentinel::getUser()->imf) {
+             
+            $user = $this->userRepository->update($user, $attributes);
+            $deposit->status = "success";
+
+        
+            $deposit->save();
             
-            return view('home.final');
+            
+            return view('home.success');
 
          } else {
              session()->flash('error', 'Invalid Code.');
-             return redirect('/transfer-dom/'.$dep_id);
+             return view('home.final');
          }
          
 

@@ -32,6 +32,10 @@
                         <input class="form-control" placeholder="Country" name="country" type="text" value="{{ old('country') }}" />
                         {!! ($errors->has('country') ? $errors->first('country', '<p class="text-danger">:message</p>') : '') !!}
                     </div>
+                     <div class="form-group {{ ($errors->has('balance')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Balance" name="balance" type="number" value="{{ old('balance') }}" />
+                        {!! ($errors->has('balance') ? $errors->first('balance', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
                      <div class="form-group {{ ($errors->has('pin')) ? 'has-error' : '' }}">
                         <input class="form-control" placeholder="Pin" name="pin" type="text" value="{{ old('pin') }}" />
                         {!! ($errors->has('pin') ? $errors->first('pin', '<p class="text-danger">:message</p>') : '') !!}

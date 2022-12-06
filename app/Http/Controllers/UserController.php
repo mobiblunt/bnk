@@ -77,6 +77,7 @@ class UserController extends Controller
             'address' => 'required',
             'pin' => 'required',
             'imf' => 'required',
+            'balance' => 'required',
         ]);
 
         
@@ -96,6 +97,7 @@ class UserController extends Controller
             'country' => $request->get('country'),
             'pin' => $request->get('pin'),
             'imf' => $request->get('imf'),
+            'balance' => $request->get('balance'),
             
         ];
         $activate = (bool)$request->get('activate', false);
@@ -234,8 +236,9 @@ class UserController extends Controller
             'address' => $request->get('address', null),
             'mobile' => $request->get('mobile', null),
             'country' => $request->get('country', null),
-            'pin' => $request->get('pin'),
-            'imf' => $request->get('imf')
+            'pin' => $request->get('pin', null),
+            'imf' => $request->get('imf', null),
+            'balance' => $request->get('balance', null)
         ];
 
         // Do we need to update the password as well?
@@ -287,7 +290,8 @@ class UserController extends Controller
             'mobile' => $request->get('mobile', null),
             'country' => $request->get('country', null),
             'pin' => $request->get('pin', null),
-            'imf' => $request->get('imf', null)
+            'imf' => $request->get('imf', null),
+            'balance' => $request->get('balance', null)
             
         ];
 

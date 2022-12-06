@@ -10,7 +10,7 @@
                         <div class="col-md-12">  
                             <div class="card">
                                 <div class="card-header" data-background-color="blue">
-                                    <h4 class="title">Alerts</h4>
+                                    <h4 class="title">Transactions</h4>
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table class="table">
@@ -57,7 +57,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                            
                             <div class="card card-stats">
-                                <div class="card-header" data-background-color="orange">
+                                <h3>Good {{$dayTerm}} {{$user->first_name}}</h3>
                                     
                                 </div>
                                 <div class="card-content">
@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <h3><b>Balance:</b> $562,645.98</h3>
+                                        <h3><b>Balance:</b>$@money($user->balance)</h3>
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +98,8 @@
                                             <th>Reference</th>
                                             <th>Narration</th>
                                             <th>Amount</th>
-                                            <th>Balance</th>
+                                            <th>Status</th>
+                                            
 
                                         </thead>
                                         <tbody>
@@ -109,7 +110,8 @@
                                                 <td>{{$alt->ref}}</td>
                                                 <td>{{$alt->narration}}</td>
                                                 <td>{{$alt->amount}}</td>
-                                                <td>{{$alt->balance}}</td>
+                                                <td>{{$alt->status}}</td>
+                                                
                                                 
                                                 
                                                 

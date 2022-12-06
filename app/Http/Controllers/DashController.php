@@ -38,7 +38,8 @@ class DashController extends Controller
        } 
        else {
 
-
+        $hour = date('H');
+        $dayTerm = ($hour > 17) ? "Evening" : (($hour > 12) ? "Afternoon" : "Morning"); 
 
         //$user = Sentinel::getUser()->plan_id;
 
@@ -60,7 +61,7 @@ class DashController extends Controller
 
         //dd($acct);
 
-        return view('centaur.dashboard' , compact('dat','tran', 'user'));
+        return view('centaur.dashboard' , compact('dat','tran', 'user', 'dayTerm'));
 
         }
     }

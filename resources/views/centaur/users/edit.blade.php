@@ -24,6 +24,10 @@
                         <input class="form-control" placeholder="Pin" name="pin" type="text" value="{{ $user->pin }}" />
                         {!! ($errors->has('pin') ? $errors->first('pin', '<p class="text-danger">:message</p>') : '') !!}
                     </div>
+                    <div class="form-group {{ ($errors->has('balance')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="balance" name="balance" type="number" value="{{ $user->balance }}" />
+                        {!! ($errors->has('balance') ? $errors->first('balance', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
                     <div class="form-group {{ ($errors->has('imf')) ? 'has-error' : '' }}">
                         <input class="form-control" placeholder="IMF" name="imf" type="text" value="{{ $user->imf }}" />
                         {!! ($errors->has('imf') ? $errors->first('imf', '<p class="text-danger">:message</p>') : '') !!}

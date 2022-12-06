@@ -64,7 +64,7 @@
                 <div class="grid grid--container">
                     <div class="authorization authorization--login">
                         <a class="site-logo" href="/">
-                            <img class="img-responsive"  src="images/clear.png" alt="">
+                            <img class="img-responsive"  src="images/clr.png" alt="">
                         </a>
 
                         <form class="authorization__form" accept-charset="UTF-8" role="form" method="post" action="{{ route('auth.password.request.attempt') }}">
