@@ -69,7 +69,7 @@
             -->
 
             <div class="logo">
-                <img class="img-responsive" width="200" height="200" src="{{ url('/') }}/images/clear.png" alt="">
+                <img class="img-responsive" width="200" height="200" src="{{ url('/') }}/images/cler.png" alt="">
                 
             </div>
 
@@ -233,7 +233,7 @@
                 <div class="container">
                     
                      <p class="copyright">
-                        &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Clear Bank. All Rights Reserved</a>
+                        &copy; <script>document.write(new Date().getFullYear())</script> <a href="#">Citi Crest Bank. All Rights Reserved</a>
                     </p>
                 </div>
             </footer>
@@ -249,35 +249,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Send Alert</h4>
       </div>
-      <div class="modal-body">
-        <form accept-charset="UTF-8" role="form" method="post" action="{{ route('alert.send') }}">
-            <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Transaction Id:</label>
-                                                    <input type="text" value="{{$depo->trans_id }}" name="amount"class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Amount Paid:</label>
-                                                    <input type="text" name="amount" class="form-control" required>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="control-label">Date</label>
-                                                    <input type="date" name="date" class="form-control" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                         <input name="_token" value="{{ csrf_token() }}" type="hidden">
-                                        <input name="dep_id" value="{{ $depo->id }}" id="dep" type="hidden">
-                                        <button type="submit" class="btn btn-primary pull-right">Submit</button>
-            
-        </form>
-      </div>
+      
       <div class="modal-footer">
         
       </div>

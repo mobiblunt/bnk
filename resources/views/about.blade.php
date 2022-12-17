@@ -55,7 +55,7 @@
                 <div class="acavo-responsive-menu">
                     <div class="logo">
                         <a href="{{ route('auth.home') }}">
-                            <img src="images/logo.png" alt="logo">
+                            <img src="images/clr.png" alt="logo">
                         </a>
                     </div>
                 </div>

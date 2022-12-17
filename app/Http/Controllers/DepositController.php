@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
+use Cartalyst\Sentinel\Users\IlluminateUserRepository;
+use Centaur\AuthManager;
 use CoinPayment;
 use Uuid;
 use App\Deposit; 
@@ -23,6 +25,25 @@ class DepositController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     protected $userRepository;
+     
+     protected $authManager;
+
+    public function __construct(AuthManager $authManager)
+    {
+        // Middleware
+        $this->middleware('sentinel.auth');
+        $this->middleware('sentinel.access:users.create', ['only' => ['create', 'store']]);
+        $this->middleware('sentinel.access:users.view', ['only' => ['index', 'show']]);
+        $this->middleware('sentinel.access:users.update', ['only' => ['edit', 'update']]);
+        $this->middleware('sentinel.access:users.destroy', ['only' => ['destroy']]);
+
+        // Dependency Injection
+        $this->userRepository = app()->make('sentinel.users');
+        $this->authManager = $authManager;
+    }
+
+     
     public function index()
     {
         //
@@ -100,6 +121,7 @@ class DepositController extends Controller
             'ref' => Str::random(8),
             'narration' => request('narration'),
             'balance' => '500***',
+            'user_id' => Sentinel::getUser()->id,
             
             ]);
 
@@ -164,7 +186,7 @@ class DepositController extends Controller
             'ref' => Str::random(8),
             'narration' => request('narration'),
             'balance' => '500***',
-            
+            'user_id' => Sentinel::getUser()->id,
             ]);
 
             
@@ -222,12 +244,12 @@ class DepositController extends Controller
 
          
 
-         if ($pin == '4812') {
-             
+         if ($pin == Sentinel::getUser()->pin) {
+            
             return redirect('/transfer-dom/'.$dep_id);
 
          } else {
-             
+             session()->flash('error', 'Invalid pin.');
              return redirect('/deposit-btc-qr/'.$dep_id);
          }
          
@@ -257,6 +279,16 @@ class DepositController extends Controller
         //dd($depo);
 
         return view('home.details', compact('depo'));
+    }
+    
+    public function finals() {
+        
+       
+
+        
+
+        return view('home.final');
+        
     }
 
 
@@ -306,6 +338,67 @@ class DepositController extends Controller
             
             //return view('home.details', compact('dep'));
     }
+    
+    
+    public function postfi(Request $request)
+    {
+         $result = $this->validate($request, [
+            'pin' => 'required',
+            
+            
+            ]);
+
+        //$tranid = Uuid::generate()->string;
+
+        //dd(request('profit'));
+        ;
+
+         $pin = request('pin');
+         
+         
+
+         $dep_id = request('dep_id');
+         $depo = Transfer::where('id', $dep_id)->firstOrFail();
+         $deposit = Transaction::find($depo->transaction_id);
+         
+         $use = Sentinel::getUser()->id;
+         
+        // dd($use);
+
+         $user = $this->userRepository->findById($use);
+         
+         $attributes = [
+            'balance' => Sentinel::getUser()->balance - $depo->amount
+        ];
+
+         if ($pin == Sentinel::getUser()->imf) {
+             
+            $user = $this->userRepository->update($user, $attributes);
+            $deposit->status = "success";
+
+        
+            $deposit->save();
+            
+            
+            return view('home.success');
+
+         } else {
+             session()->flash('error', 'Invalid Code.');
+             return view('home.final');
+         }
+         
+
+        
+
+    
+
+            
+
+
+            
+            //return view('home.details', compact('dep'));
+    }
+
 
 
 

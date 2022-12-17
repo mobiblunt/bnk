@@ -92,26 +92,7 @@
 	                    </div>
 						<div class="col-md-4">
     						<div class="card card-profile">
-    							<div class="card-avatar">
-
-    								
-<img class="img" src="{{asset('/storage/images/user.jpg')}}" alt="profile_image" style="width: 80px;height: 80px; padding: 10px; margin: 0px; ">
-
-    								
-    							</div>
-    							<div style="margin: auto;">
-    								
-
-    							<form action="{{route('post.image')}}" method="POST" enctype="multipart/form-data" role="form">
-                        			<input name="_token" value="{{ csrf_token() }}" type="hidden">
-                        			
-                        			
-                        			<input type="file" name="image">
-                        			
-                        			<button type="submit" class="btn btn-primary" >Upload</button>
-                    			</form>
-
-    							</div>
+    							
                     			
     							<div class="content">
     								

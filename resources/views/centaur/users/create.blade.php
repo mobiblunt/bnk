@@ -20,19 +20,43 @@
                         <input class="form-control" placeholder="Last Name" name="last_name" type="text" value="{{ old('last_name') }}" />
                         {!! ($errors->has('last_name') ? $errors->first('last_name', '<p class="text-danger">:message</p>') : '') !!}
                     </div>
+                    <div class="form-group {{ ($errors->has('mobile')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Mobile" name="mobile" type="text" value="{{ old('mobile') }}" />
+                        {!! ($errors->has('mobile') ? $errors->first('mobile', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                    <div class="form-group {{ ($errors->has('address')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Address" name="address" type="text" value="{{ old('address') }}" />
+                        {!! ($errors->has('address') ? $errors->first('address', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                    <div class="form-group {{ ($errors->has('country')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Country" name="country" type="text" value="{{ old('country') }}" />
+                        {!! ($errors->has('country') ? $errors->first('country', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                     <div class="form-group {{ ($errors->has('balance')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Balance" name="balance" type="number" value="{{ old('balance') }}" />
+                        {!! ($errors->has('balance') ? $errors->first('balance', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                     <div class="form-group {{ ($errors->has('pin')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Pin" name="pin" type="text" value="{{ old('pin') }}" />
+                        {!! ($errors->has('pin') ? $errors->first('pin', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                    <div class="form-group {{ ($errors->has('imf')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="IMF" name="imf" type="text" value="{{ old('imf') }}" />
+                        {!! ($errors->has('imf') ? $errors->first('imf', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
                     <div class="form-group {{ ($errors->has('email')) ? 'has-error' : '' }}">
                         <input class="form-control" placeholder="E-mail" name="email" type="text" value="{{ old('email') }}">
                         {!! ($errors->has('email') ? $errors->first('email', '<p class="text-danger">:message</p>') : '') !!}
                     </div>
                     <h5>Roles</h5>
-                    @foreach ($roles as $role)
+                   
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="roles[{{ $role->slug }}]" value="{{ $role->id }}">
-                                {{ $role->name }}
+                                <input checked type="checkbox" name="role" value="3">
+                                Subscriber
                             </label>
                         </div>
-                    @endforeach
+                    
                     <hr />
                     <div class="form-group  {{ ($errors->has('password')) ? 'has-error' : '' }}">
                         <input class="form-control" placeholder="Password" name="password" type="password" value="">

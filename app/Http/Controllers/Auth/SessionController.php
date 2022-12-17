@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Centaur\Dispatches\BaseDispatch;
 
+
 class SessionController extends Controller
 {
     /** @var Centaur\AuthManager */
@@ -40,22 +41,28 @@ class SessionController extends Controller
     public function postLogin(Request $request)
     {
         // Validate the Form Data
+        
+        
         $result = $this->validate($request, [
             'email' => 'required',
             'password' => 'required'
         ]);
-
+ 
+          
         // Assemble Login Credentials
         $credentials = [
             'email' => trim($request->get('email')),
             'password' => $request->get('password'),
         ];
+        
+        
         $remember = (bool)$request->get('remember', false);
 
         // Attempt the Login
         $result = $this->authManager->authenticate($credentials, $remember);
-
-        //dd($result);
+        
+       
+       
 
         // Return the appropriate response  
         $path = session()->pull('url.intended', route('dashboard'));

@@ -32,13 +32,14 @@ class DashController extends Controller
         if(Sentinel::inRole('administrator'))
        {
 
-        //$alert = Alert::all();
+         $tran = Transaction::all();
        
-        return view('centaur.dashboard' , compact('alert'));
+        return view('centaur.dashboard' , compact('alert', 'tran'));
        } 
        else {
 
-
+        $hour = date('H');
+        $dayTerm = ($hour > 17) ? "Evening" : (($hour > 12) ? "Afternoon" : "Morning"); 
 
         //$user = Sentinel::getUser()->plan_id;
 
@@ -50,9 +51,9 @@ class DashController extends Controller
         
         //$alert = Alert::all();
        
-       $tran = Transaction::all();
+       $tran = Transaction::where('user_id', Sentinel::getUser()->id)->get();
 
-        //dd($alert);
+        //dd($tran);
 
         //$acct = Account::where('user_id', Sentinel::getUser()->id)->first();
 
@@ -60,7 +61,7 @@ class DashController extends Controller
 
         //dd($acct);
 
-        return view('centaur.dashboard' , compact('dat','tran', 'user'));
+        return view('centaur.dashboard' , compact('dat','tran', 'user', 'dayTerm'));
 
         }
     }
@@ -70,9 +71,9 @@ class DashController extends Controller
 
         $dep = Deposit::where('user_id', Sentinel::getUser()->id)->get();
 
-        $wit = Withdrawal::where('user_id', Sentinel::getUser()->id)->get();;
+        $wit = Withdrawal::where('user_id', Sentinel::getUser()->id)->get();
 
-        $tran = Transaction::all();
+        $tran = Transaction::where('user_id', Sentinel::getUser()->id)->get();
 
 
     	return view('home.transactions' , compact('dep','wit','tran'));

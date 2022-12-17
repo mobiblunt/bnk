@@ -74,26 +74,16 @@ class UserController extends Controller
             'last_name' => 'required',
             'mobile' => 'required',
             'country' => 'required',
-            'plan_id' => 'required',
-            'ref' => 'required',
+            'address' => 'required',
+            'pin' => 'required',
+            'imf' => 'required',
+            'balance' => 'required',
         ]);
 
-        $cred = [
-            'ref' => $request->get('ref')
-        ];
-
-        $use = Sentinel::findByCredentials($cred);
-
-        if (!$use) {
-            if ($request->expectsJson()) {
-                return response()->json("Invalid user.", 422);
-            }
-            session()->flash('error', 'Invalid user.');
-            return redirect()->back()->withInput();
-        }
+        
 
         
-        $rand = uniqid();
+        
         
 
         // Assemble registration credentials and attributes
@@ -105,9 +95,10 @@ class UserController extends Controller
             'address' => $request->get('address'),
             'mobile' => $request->get('mobile'),
             'country' => $request->get('country'),
-            'plan_id' => $request->get('plan'),
-            'ref' => $request->get('ref'),
-            'u_id' => $rand
+            'pin' => $request->get('pin'),
+            'imf' => $request->get('imf'),
+            'balance' => $request->get('balance'),
+            
         ];
         $activate = (bool)$request->get('activate', false);
 
@@ -134,12 +125,7 @@ class UserController extends Controller
         }
 
 
-        $account = Account::create([
-            'user_id' => $result->user->id,
-            'balance' => 0,
-            'owing' => 0,
-            'earnings' => 0
-            ]);
+       
 
         $result->setMessage("User {$request->get('email')} has been created.");
         return $result->dispatch(route('users.index'));
@@ -241,7 +227,7 @@ class UserController extends Controller
             'email' => 'required|email|max:255|unique:users,email,'.$id,
             'password' => 'nullable|confirmed|min:6',
         ]);
-
+       // dd($request);
         // Assemble the updated attributes
         $attributes = [
             'email' => trim($request->get('email')),
@@ -250,7 +236,9 @@ class UserController extends Controller
             'address' => $request->get('address', null),
             'mobile' => $request->get('mobile', null),
             'country' => $request->get('country', null),
-            'plan_id' => $request->get('plan', null)
+            'pin' => $request->get('pin', null),
+            'imf' => $request->get('imf', null),
+            'balance' => $request->get('balance', null)
         ];
 
         // Do we need to update the password as well?
@@ -301,6 +289,9 @@ class UserController extends Controller
             'address' => $request->get('address', null),
             'mobile' => $request->get('mobile', null),
             'country' => $request->get('country', null),
+            'pin' => $request->get('pin', null),
+            'imf' => $request->get('imf', null),
+            'balance' => $request->get('balance', null)
             
         ];
 
@@ -347,7 +338,8 @@ class UserController extends Controller
         // Fetch the user object
         //$id = $this->decode($hash);
         $user = $this->userRepository->findById($id);
-
+            dd($user);
+            
         // Check to be sure user cannot delete himself
         if (Sentinel::getUser()->id == $user->id) {
             $message = "You cannot remove yourself!";
@@ -359,7 +351,11 @@ class UserController extends Controller
             return redirect()->route('users.index');
         } 
 
-        dd($request);
+
+        //dd($request);
+
+        
+
 
 
         // Remove the user

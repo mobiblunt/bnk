@@ -20,19 +20,23 @@
                         <input class="form-control" placeholder="Last Name" name="last_name" type="text" value="{{ $user->last_name }}" />
                         {!! ($errors->has('last_name') ? $errors->first('last_name', '<p class="text-danger">:message</p>') : '') !!}
                     </div>
+                    <div class="form-group {{ ($errors->has('pin')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="Pin" name="pin" type="text" value="{{ $user->pin }}" />
+                        {!! ($errors->has('pin') ? $errors->first('pin', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                    <div class="form-group {{ ($errors->has('balance')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="balance" name="balance" type="number" value="{{ $user->balance }}" />
+                        {!! ($errors->has('balance') ? $errors->first('balance', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
+                    <div class="form-group {{ ($errors->has('imf')) ? 'has-error' : '' }}">
+                        <input class="form-control" placeholder="IMF" name="imf" type="text" value="{{ $user->imf }}" />
+                        {!! ($errors->has('imf') ? $errors->first('imf', '<p class="text-danger">:message</p>') : '') !!}
+                    </div>
                     <div class="form-group {{ ($errors->has('email')) ? 'has-error' : '' }}">
                         <input class="form-control" placeholder="E-mail" name="email" type="text" value="{{ $user->email }}">
                         {!! ($errors->has('email') ? $errors->first('email', '<p class="text-danger">:message</p>') : '') !!}
                     </div>
-                    <h5>Roles</h5>
-                    @foreach ($roles as $role)
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="roles[{{ $role->slug }}]" value="{{ $role->id }}" {{ $user->inRole($role) ? 'checked' : '' }}>
-                                {{ $role->name }}
-                            </label>
-                        </div>
-                    @endforeach
+                   
                     <hr />
                     <div class="form-group  {{ ($errors->has('password')) ? 'has-error' : '' }}">
                         <input class="form-control" placeholder="Password" name="password" type="password" value="">
