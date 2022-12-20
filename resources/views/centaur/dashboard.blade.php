@@ -307,7 +307,7 @@
                       <div class="avatar">
                         <img
                           class="rounded-full"
-                          src="images/avatar/ddownload.jpg"
+                          src="{{ url('/') }}/images/avatar/ddownload.jpg"
                           alt="avatar"
                         />
                       </div>

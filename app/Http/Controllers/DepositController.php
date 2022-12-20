@@ -229,39 +229,22 @@ class DepositController extends Controller
 
     public function pin(Request $request)
     {
-         $result = $this->validate($request, [
-            'pin' => 'required',
-            
-            ]);
-
+         
         //$tranid = Uuid::generate()->string;
 
         //dd(request('profit'));
 
-         $pin = request('pin');
+        
 
          $dep_id = request('dep_id');
 
          
 
-         if ($pin == Sentinel::getUser()->pin) {
-            
-            return redirect('/transfer-dom/'.$dep_id);
-
-         } else {
-             session()->flash('error', 'Invalid pin.');
-             return redirect('/deposit-btc-qr/'.$dep_id);
-         }
-         
-
         
-
-    
-
             
+        return redirect('/transfer-dom/'.$dep_id);
 
-
-            
+                
             //return view('home.details', compact('dep'));
     }
 

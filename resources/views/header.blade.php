@@ -105,7 +105,7 @@
             <div class="flex flex-col items-center space-y-3 py-3">
               <!-- Settings -->
               <a
-                href="#"
+                href="{{ route('view.account', Sentinel::getUser()->id) }}"
                 class="flex h-11 w-11 items-center justify-center rounded-lg outline-none transition-colors duration-200 hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
               >
                 <svg
@@ -139,7 +139,7 @@
                 >
                   <img
                     class="rounded-full"
-                    src="{{ url('/') }}/images/avatar/ddownload.jpg"
+                    src="{{ url('/') }}/images/avatars/ddownload.jpg"
                     alt="avatar"
                   />
                   <span
@@ -161,7 +161,7 @@
                       <div class="avatar h-14 w-14">
                         <img
                           class="rounded-full"
-                          src="images/avatar/ddownload.jpg"
+                          src="{{ url('/') }}/images/avatars/ddownload.jpg"
                           alt="avatar"
                         />
                       </div>
@@ -252,7 +252,16 @@
               
               <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>
               <ul class="flex flex-1 flex-col px-4 font-inter">
-
+                <li>
+                  <a
+                    x-data="navLink"
+                    href="{{ route('dashboard') }}"
+                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                    class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out"
+                  >
+                    Home
+                  </a>
+                </li>
 
 
 
@@ -392,11 +401,34 @@
                         </div>
                       </a>
                     </li>
-                    @endif
+                    
+                    
                   </ul>
+                  
                 </li>
+                <li>
+                  <a
+                    x-data="navLink"
+                    href="{{ route('view.account', Sentinel::getUser()->id) }}"
+                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                    class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out"
+                  >
+                    Settings
+                  </a>
+                </li>
+
+                @endif
                 
-                
+                <li>
+                  <a
+                    x-data="navLink"
+                    href="{{ route('auth.logout') }}"
+                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                    class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out"
+                  >
+                    Log Out
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
