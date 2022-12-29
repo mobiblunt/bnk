@@ -210,7 +210,7 @@
 
         <!-- Sidebar Panel -->
         <div class="sidebar-panel">
-          <div
+          <div style="background-color: #4f46e5;" 
             class="flex h-full grow flex-col bg-white pl-[var(--main-sidebar-width)] dark:bg-navy-750"
           >
             <!-- Sidebar Panel Header -->
@@ -222,7 +222,7 @@
               >
                 Dashboard
               </p>
-              <button
+              <button style="color: white;"
                 @click="$store.global.isSidebarExpanded = false"
                 class="btn h-7 w-7 rounded-full p-0 text-primary hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:text-accent-light/80 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 xl:hidden"
               >
@@ -259,7 +259,7 @@
                     :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                     class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out"
                   >
-                    Home
+                   <span style="font-size: large; color: white;">Home</span> 
                   </a>
                 </li>
 
@@ -272,10 +272,10 @@
                   <a
                     x-data="navLink"
                     href="{{ route('users.index') }}"
-                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-800 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                     class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out"
                   >
-                    Users
+                     <span style="font-size: large; color: white;">Users</span> 
                   </a>
                 </li>
                     @else
@@ -290,12 +290,12 @@
 
                 <li x-data="accordionItem('menu-item-1')">
                   <a
-                    :class="expanded ? 'text-slate-800 font-semibold dark:text-navy-50' : 'text-slate-600 dark:text-navy-200  hover:text-slate-800  dark:hover:text-navy-50'"
+                    :class="expanded ? 'text-slate-800 font-semibold dark:text-navy-50' : 'text-slate-800 dark:text-navy-200  hover:text-slate-800  dark:hover:text-navy-50'"
                     @click="expanded = !expanded"
                     class="flex items-center justify-between py-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out"
                     href="javascript:void(0);"
                   >
-                    <span>Account Details</span>
+                    <span style="font-size: large; color: white;">Account Details</span>
                     <svg
                       :class="expanded && 'rotate-90'"
                       xmlns="http://www.w3.org/2000/svg"
@@ -317,14 +317,15 @@
                       <a
                         x-data="navLink"
                         href="{{ route('get.trans') }}"
-                        :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                        :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-800 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                         class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
                       >
                         <div class="flex items-center space-x-2">
                           <div
                             class="h-1.5 w-1.5 rounded-full border border-current opacity-40"
                           ></div>
-                          <span>Account Statement</span>
+                          
+                          <span style="font-size: large; color: white;">Account Statement</span>
                         </div>
                       </a>
                     </li>
@@ -332,14 +333,14 @@
                       <a
                         x-data="navLink"
                         href="{{ route('get.trans') }}"
-                        :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                        :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-800 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                         class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
                       >
                         <div class="flex items-center space-x-2">
                           <div
                             class="h-1.5 w-1.5 rounded-full border border-current opacity-40"
                           ></div>
-                          <span>Transaction History</span>
+                          <span style="font-size: large; color: white;">Transaction History</span>
                         </div>
                       </a>
                     </li>
@@ -348,12 +349,12 @@
                 </li>
                 <li x-data="accordionItem('menu-item-2')">
                   <a
-                    :class="expanded ? 'text-slate-800 font-semibold dark:text-navy-50' : 'text-slate-600 dark:text-navy-200  hover:text-slate-800  dark:hover:text-navy-50'"
+                    :class="expanded ? 'text-slate-800 font-semibold dark:text-navy-50' : 'text-slate-800 dark:text-navy-200  hover:text-slate-800  dark:hover:text-navy-50'"
                     @click="expanded = !expanded"
                     class="flex items-center justify-between py-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out"
                     href="javascript:void(0);"
                   >
-                    <span>Transfers</span>
+                    <span style="font-size: large; color: white;">Transfers</span>
                     <svg
                       :class="expanded && 'rotate-90'"
                       xmlns="http://www.w3.org/2000/svg"
@@ -375,14 +376,14 @@
                       <a
                         x-data="navLink"
                         href="{{ route('get.dep') }}"
-                        :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                        :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-800 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                         class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
                       >
                         <div class="flex items-center space-x-2">
                           <div
                             class="h-1.5 w-1.5 rounded-full border border-current opacity-40"
                           ></div>
-                          <span>Local Transfer</span>
+                          <span style="font-size: large; color: white;">Local Transfer</span>
                         </div>
                       </a>
                     </li>
@@ -390,14 +391,14 @@
                       <a
                         x-data="navLink"
                         href="{{ route('get.int') }}"
-                        :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                        :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-800 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                         class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4"
                       >
                         <div class="flex items-center space-x-2">
                           <div
                             class="h-1.5 w-1.5 rounded-full border border-current opacity-40"
                           ></div>
-                          <span>International Transfers</span>
+                          <span style="font-size: large; color: white;">International Transfers</span>
                         </div>
                       </a>
                     </li>
@@ -410,10 +411,10 @@
                   <a
                     x-data="navLink"
                     href="{{ route('view.account', Sentinel::getUser()->id) }}"
-                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-800 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                     class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out"
                   >
-                    Settings
+                    <span style="font-size: large; color: white;">Settings</span>
                   </a>
                 </li>
 
@@ -423,10 +424,10 @@
                   <a
                     x-data="navLink"
                     href="{{ route('auth.logout') }}"
-                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                    :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-800 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                     class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out"
                   >
-                    Log Out
+                    <span style="font-size: large; color: white;">Log Out</span>
                   </a>
                 </li>
               </ul>
@@ -445,7 +446,7 @@
           <div class="flex w-full items-center justify-between">
             <!-- Left: Sidebar Toggle Button -->
             <div class="h-7 w-7">
-              <button
+              <button  
                 class="menu-toggle ml-0.5 flex h-7 w-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80"
                 :class="$store.global.isSidebarExpanded && 'active'"
                 @click="$store.global.isSidebarExpanded = !$store.global.isSidebarExpanded"
@@ -604,7 +605,7 @@
                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
                 </svg>
-                <span class="text-xs">25 May, 2022</span>
+                <span class="text-xs">{{date('Y-m-d')}}</span>
               </p>
               <p
                 x-show="activeTab === 'tabProjects'"

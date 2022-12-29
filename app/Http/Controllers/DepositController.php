@@ -103,8 +103,6 @@ class DepositController extends Controller
             'amount' => 'required',
             'bene' => 'required',
             'narration' => 'required',
-            'swift' => 'required',
-            'routing' => 'required',
             'bank_name' => 'required',
             'account_no' => 'required',
 
@@ -141,8 +139,8 @@ class DepositController extends Controller
             'type' => 'Domestic',
             'beneficiary' => request('bene'),
             'narration' => request('narration'),
-            'swift' => request('swift'),
-            'routing' => request('routing'),
+            'swift' => request('swift', null),
+            'routing' => request('routing', null),
             'bank_name' => request('bank_name'),
             'account' => request('account_no'),
 

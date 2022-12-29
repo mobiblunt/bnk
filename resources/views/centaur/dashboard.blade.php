@@ -151,7 +151,7 @@
                 </div>
                 <p class="mt-16">Balance</p>
                 <p class="mt-2 font-medium text-slate-700 dark:text-navy-100">
-                  <span class="text-2xl">$@money($user->balance)</span
+                  <span class="text-1xl">$@money($user->balance)</span
                   >
                 </p>
                 <p class="mt-1 flex items-center text-xs text-success">
@@ -293,7 +293,7 @@
                     Transactions
                   </h2>
                   <a
-                    href="#"
+                    href="{{ route('get.trans') }}"
                     class="border-b border-dotted border-current pb-0.5 text-xs+ font-medium text-primary outline-none transition-colors duration-300 hover:text-primary/70 focus:text-primary/70 dark:text-accent-light dark:hover:text-accent-light/70 dark:focus:text-accent-light/70"
                   >
                     View All
